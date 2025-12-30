@@ -1,60 +1,156 @@
-body{
-    font-family: Arial;
-    display:flex;
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
     justify-content: center;
+    align-items: flex-start;
     padding-top: 50px;
-    background-color: #e1f3f8;
+    background: linear-gradient(135deg, #e1f3f8, #cfe9f5);
 }
-.container{
+
+/* ===== Container ===== */
+.container {
     background: rgb(179, 225, 240);
-    padding: 20px;
-    width:350px;
-    height: auto;
-    box-shadow: 0 0 10px #1f7ad5;
-    border-radius: 10px;
+    padding: 22px;
+    width: 390px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(31, 122, 213, 0.25);
 }
-h1{
+
+/* ===== Title ===== */
+h1 {
     text-align: center;
     color: #034f84;
-    font-size: 40px;
+    font-size: 35px;
+    margin-bottom: 20px;
 }
-input{
-    width: 70%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    margin-right: 10px;
+
+/* ===== Labels ===== */
+label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    color: #034f84;
+    margin-bottom: 4px;
+    font-size: 17px;
+}
+
+label i {
+    color: #2790db;
+}
+
+/* ===== Inputs & Select ===== */
+input,
+select {
+    width: 100%;
+    padding: 9px 12px;
+    margin-bottom: 12px;
+    border-radius: 6px;
     background-color: #eaeff4;
+    font-size: 14px;
+    border: 1px solid #ccc;
 }
-button{
-    padding: 10px;
+
+input:focus,
+select:focus {
+    outline: 2px solid #2790db;
+}
+
+/* ===== Buttons ===== */
+button {
+    width: auto;
+    padding: 9px 15px;
+    margin-bottom: 8px;
     border: none;
-    border-radius: 5px;
-    background-color: #2790db;
+    border-radius: 6px;
+    background-color: #66b4ec;
     color: white;
+    font-size: 15px;
     cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-ul{
-    list-style-type: none;
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Task List ===== */
+ul {
+    list-style: none;
     padding: 0;
-    margin-top: 20px;
+    margin-top: 16px;
 }
-li{
-    padding: 10px;
-    border-bottom: 1px solid #98c1ef;
+
+/* ===== Task Item ===== */
+li {
+    background: rgba(255, 255, 255, 0.55);
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    animation: slideIn 0.3s ease-in-out;
 }
+
+/* ===== Task Content ===== */
+.task-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.task-info strong {
+    font-size: 15px;
+    color: #034f84;
+}
+
+.task-info span {
+    font-size: 13px;
+    color: #055a91;
+    opacity: 0.85;
+}
+
+/* ===== Completed Task ===== */
 .completed {
     text-decoration: line-through;
-    color: grey;
+    color: gray;
 }
-.deleteBtn {
+
+/* ===== Delete Button ===== */
+li button {
+    width:auto;
     background-color: #072e4d;
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 6px 10px;
+    font-size: 16px;
+    border-radius: 50%;
+}
+
+li button:hover {
+    background-color: #041e33;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 400px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
 }

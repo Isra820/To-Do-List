@@ -8,10 +8,26 @@
 </head>
 <body>
     <div class="container">
-        <h1>To-Do List</h1>
-        <input type="text" id="taskInput" placeholder="Add a new task...">
-        <button id="addBtn" >Add</button>
-        <ul id="taskList"></ul>
+    <h1>To-Do List</h1>
+
+    <label for="title">📝 Title</label>
+    <input id="title" placeholder="Task Title">
+
+    <label for="priority">⚑ Priority</label>
+    <select id="priority">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+    </select>
+
+    <label for="dueDate">📅 Due Date</label>
+    <input type="date" id="dueDate"/>
+
+    <button id="addTask">Add Task</button>
+    <button id="sortDate">Sort By Date</button>
+    <button id="sortPriority">Sort By Priority</button>
+
+    <ul id="taskList"></ul>
     </div>
     <script src="script.js"></script>
 </body>
